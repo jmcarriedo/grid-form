@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Exercise 1</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 3fr;
+            height: 100vh;
+        }
+
+        .contact {
+            background-color: #041947;
+            color: #fff;
+            padding: 50px;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        form {
+            padding: 50px;
+            text-align: left;
+        }
+
+        form > div { 
+            padding: 10px 0;
+        }
+
+        form > .col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 40px;
+        }
+
+        label {
+            padding: 5px 0;
+        }
+        
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color:#cfcdcd;
+        }
+
+        textarea {
+            width: 100%;
+            height: 360px;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn-submit:hover {
+            background-color: #3089e2;
+            color: #fff;
+        }
+
+        @media all and (max-width: 575px) {
+            .grid {
+                display: grid;
+                grid-template-rows: 1fr 3fr;
+                grid-template-columns: 1fr;
+                height: 100vh;
+            }
+            textarea {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+
+        <div class="contact">
+            <h3>Our contacts</h3><br>
+            <p>123 Kamagong St.</p>
+            <p>801212121-11</p>
+            <p>mail@mail.com</p>
+        </div>
+        
+        <form>
+            <h3>Send us a message</h3>
+            <div class="col">
+                <label>
+                    Your name <br><input type="text" name="fname">
+                </label>
+                <label>
+                    Skype <br><input type="text" name="skype">
+                </label>
+            </div>
+            <div class="col">
+                <label>
+                    Email Address <br><input type="email" name="email">
+                </label>
+                <label>
+                    Topic <br><input type="text" name="topic">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Write your message <br><textarea name="message"></textarea>        
+                </label>
+            </div>
+            <div><button class="btn-submit" type="submit" value="Submit">Send</button></div>
+        </form>
+        
+    </div>
+</body>
+</html>
